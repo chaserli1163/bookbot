@@ -1,4 +1,5 @@
 from stats import *
+import sys
 
 def get_book_text(filepath):
     with open(filepath) as f:
@@ -20,8 +21,12 @@ def main(f):
     print("============= END ===============")
 
 
-main("books/frankenstein.txt")
-#input_string = get_book_text("books/frankenstein.txt")
-#dic = char_counter(input_string)
-#list = dic_sorter(dic)
-#print(list)
+if len(sys.argv)<2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+else:
+    main(sys.argv[1])
+
+#main()
+
+#"books/frankenstein.txt"
